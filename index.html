@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chao Song (psychAo)</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav>
+        <ul>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#service">Service</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- profile -->
+        <div class="profile">
+            <!-- left: intro -->
+            <div class="intro">
+                <h1>Chao Song</h1>
+                <p>
+                    I am currently a PhD student in the School of Electronics and Information
+                    at Northwestern Polytechnical University (NWPU),
+                    under the supervision of Professor <a href="https://teacher.nwpu.edu.cn/meishaohui.html" target="_blank">Shaohui Mei</a>.
+                    My research interests include remote sensing and deep learning.
+                </p>
+                <!-- links -->
+                <div class="links">
+                    <a href="mailto:chaosong@mail.nwpu.edu.cn">Email</a> /
+                    <a href="https://scholar.google.com/citations?user=hzo7WBEAAAAJ">Google Scholar</a> /
+                    <a href="https://github.com/psychAo">GitHub</a>
+                </div>
+            </div>
+            <!-- right: photo -->
+            <div class="photo">
+                <img src="assets/photo/Brian_Griffin.png" alt="profile photo">
+            </div>
+        </div>
+
+        <!-- experience -->
+        <h2 id="experience">Experience</h2>
+        <ul class="experience-list">
+            <li>
+                <div class="logo-container">
+                    <img src="assets/logo/nwpu.jpg" alt="NWPU Logo">
+                </div>
+                <div>
+                    <b>Northwestern Polytechnical University</b><br>
+                    PhD Candidate, 2023 - Present
+                </div>
+            </li>
+            <li>
+                <div class="logo-container">
+                    <img src="assets/logo/nwpu.jpg" alt="NWPU Logo">
+                </div>
+                <div>
+                    <b>Northwestern Polytechnical University</b><br>
+                    Master's Degree, 2020 - 2023
+                </div>
+            </li>
+            <li>
+                <div class="logo-container">
+                    <img src="assets/logo/hqu.jpg" alt="HQU Logo">
+                </div>
+                <div>
+                    <b>Huaqiao University</b><br>
+                    Bachelor's Degree, 2016 - 2020
+                </div>
+            </li>
+        </ul>
+
+        <!-- research -->
+        <h2 id="research">Research</h2>
+        <label>Filter by year:</label>
+        <select id="yearFilter">
+            <option value="all">All</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+        </select>
+
+        <div id="papers">
+            <div class="paper" data-year="2025">
+                <div class="paper-img">
+                    <img src="assets/paper/song2025tmm.jpg" alt="paper">
+                </div>
+                <div class="paper-info">
+                    <b>RIFormer+: Rethinking Rotation-Invariant Feature Learning in Transformer</b><br>
+                    <b>Chao Song</b>, Yifan Zhang, Mingyang Ma, Shaohui Mei<br>
+                    <i>IEEE Transactions on Multimedia (TMM)</i>, 2025<br>
+                    <a href="https://ieeexplore.ieee.org/document/11153890">[Paper]</a>
+                    <a href="https://github.com/psychAo/RIFormerPlus">[Github]</a>
+                    <a href="assets/bibtex/song2025tmm.bib">[BibTeX]</a>
+                </div>
+            </div>
+            <div class="paper" data-year="2022">
+                <div class="paper-img">
+                    <img src="assets/paper/mei2022tgrs.jpg" alt="paper">
+                </div>
+                <div class="paper-info">
+                    <b>Hyperspectral Image Classification Using Group-Aware Hierarchical Transformer</b><br>
+                    Shaohui Mei, <b>Chao Song</b>, Mingyang Ma, Fulin Xu<br>
+                    <i>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</i>, 2022<br>
+                    <a href="https://ieeexplore.ieee.org/document/9895238">[Paper]</a>
+                    <a href="https://github.com/MeiShaohui/Group-Aware-Hierarchical-Transformer">[Github]</a>
+                    <a href="assets/bibtex/mei2022tgrs.bib">[BibTeX]</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- service -->
+        <h2 id="service">Service</h2>
+        <ul>
+            <li>Reviewer, <i>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</i></li>
+            <li>Reviewer, <i>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</i></li>
+            <li>Reviewer, <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS)</i></li>
+            <li>Reviewer, <i>IEEE Geoscience and Remote Sensing Letters (GRSL)</i></li>
+            <li>Reviewer, <i>Results in Engineering</i></li>
+        </ul>
+
+        <!-- footer -->
+        <footer class="footer">
+            <p>
+                Last updated: April 2, 2026
+            </p>
+        </footer>
+    </div>
+
+    <!-- javascript -->
+    <script>
+        const filter = document.getElementById("yearFilter");
+        filter.addEventListener("change", function () {
+            const year = this.value;
+            const papers = document.querySelectorAll(".paper");
+            papers.forEach(paper => {
+                if (year === "all" || paper.dataset.year === year) {
+                    paper.style.display = "flex";
+                } else {
+                    paper.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
